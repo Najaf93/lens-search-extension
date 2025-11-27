@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lens Search</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Lens Search</h1>
+    </header>
+
+    <main>
+      <div class="controls">
+        <label for="wordLimit">Word Limit</label>
+        <input type="number" id="wordLimit" value="50" min="10" max="500">
+      </div>
+
+      <div class="button-group">
+        <button id="analyzeBtn" class="primary-btn">
+          <span class="btn-text">Analyze Page</span>
+          <div class="loader hidden"></div>
+        </button>
+        <button id="cropBtn" class="secondary-btn" title="Select Area">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm80-80h400v-400H280v400Zm-80 80v-560 560Z" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="resultContainer" class="hidden">
+        <div class="result-header">
+          <h2>Result</h2>
+          <div class="result-actions">
+            <button id="copyBtn" class="icon-btn" title="Copy Text">
+              <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                fill="currentColor">
+                <path
+                  d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+              </svg>
+            </button>
+            <button id="resetBtn" class="icon-btn" title="Reset">
+              <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                fill="currentColor">
+                <path
+                  d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v240H560v-80h135q-31-40-74.5-65T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <textarea id="resultText" readonly></textarea>
+      </div>
+
+      <div id="statusMessage" class="status hidden"></div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "modifyHeaders",
+            "requestHeaders": [
+                {
+                    "header": "Origin",
+                    "operation": "set",
+                    "value": "https://www.google.com"
+                },
+                {
+                    "header": "Referer",
+                    "operation": "set",
+                    "value": "https://www.google.com/"
+                },
+                {
+                    "header": "Sec-Fetch-Site",
+                    "operation": "set",
+                    "value": "same-origin"
+                }
+            ]
+        },
+        "condition": {
+            "urlFilter": "||lens.google.com/*",
+            "resourceTypes": [
+                "xmlhttprequest"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "priority": 1,
+        "action": {
+            "type": "modifyHeaders",
+            "requestHeaders": [
+                {
+                    "header": "Origin",
+                    "operation": "set",
+                    "value": "https://www.google.com"
+                },
+                {
+                    "header": "Referer",
+                    "operation": "set",
+                    "value": "https://www.google.com/"
+                }
+            ]
+        },
+        "condition": {
+            "urlFilter": "||google.com/searchbyimage/*",
+            "resourceTypes": [
+                "xmlhttprequest"
+            ]
+        }
+    }
+]
